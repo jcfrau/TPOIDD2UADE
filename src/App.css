@@ -1,0 +1,378 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Contenedor principal del layout */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Estilos para el Navbar */
+.navbar {
+  background: #007bff;
+  padding: 1rem;
+  width: 200px; /* Ancho fijo para el Navbar */
+  display: flex;
+  flex-direction: column; /* Alinea los enlaces verticalmente */
+  gap: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los enlaces del Navbar */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenedor del contenido principal */
+.main-content {
+  flex: 1; /* Ocupa el espacio restante */
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button:active {
+  background: #004080;
+}
+
+.error-message {
+  color: #dc3545;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.user-list {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.user-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.user-list li {
+  background: #f9f9f9;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.logs {
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  max-width: 800px;
+}
+
+.logs h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.logs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.logs li {
+  background: #e9ecef;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+tr:hover {
+  background: #f1f1f1;
+}
+
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Estilos para el contenedor de la cuadrícula de productos */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Tarjetas responsivas */
+  gap: 20px; /* Espacio entre tarjetas */
+  padding: 20px;
+}
+
+/* Estilos para cada tarjeta de producto */
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la imagen del producto */
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+
+/* Estilos para los detalles del producto */
+.product-details {
+  padding: 15px;
+}
+
+.product-details h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.product-details p {
+  margin: 5px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+/* Estilos para el formulario de lotes */
+.lote-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lote-form select,
+.lote-form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.lote-form select:focus,
+.lote-form input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.lote-form button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.lote-form button:hover {
+  background: #0056b3;
+}
+
+.lote-form button:active {
+  background: #004080;
+}
+
+/* Estilos para la página de búsqueda de lotes */
+.lote-search {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lote-search select {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.lote-search select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.lote-search table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.lote-search th,
+.lote-search td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.lote-search th {
+  background: #f4f4f4;
+  font-weight: bold;
+}
+
+.lote-search tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.lote-search tr:hover {
+  background: #f1f1f1;
+}
+
+/* Estilos para la sección de logs */
+.logs {
+  position: fixed; /* Fija la sección en la parte inferior */
+  bottom: 0; /* La coloca en la parte inferior */
+  left: 0; /* La alinea a la izquierda */
+  right: 0; /* La alinea a la derecha */
+  background: #f9f9f9;
+  border-top: 1px solid #ddd; /* Borde superior para separar del contenido */
+  padding: 1rem;
+  max-height: 200px; /* Altura máxima para la sección de logs */
+  overflow-y: auto; /* Permite hacer scroll interno si hay muchos logs */
+  z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+.logs h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.logs ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; /* Elimina el margen predeterminado */
+}
+
+.logs li {
+  background: #e9ecef;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #333;
+}
